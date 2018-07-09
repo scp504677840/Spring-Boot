@@ -1,0 +1,27 @@
+# 默认环境
+server:
+  port: 8080
+spring:
+  profiles:
+    active: dev
+#active指定激活的环境，若不指定，则使用默认环境。
+
+---
+# 开发环境
+server:
+  port: 8081
+spring:
+  profiles: dev
+
+---
+# 生产环境
+server:
+  port: 8082
+spring:
+  profiles: prod
+
+# 如果使用的是properties形式
+# 1.命名使用application-{profiles}.properties形式命名
+# 如：application-dev.properties、application-prod.properties
+# 2.如需激活不同配置环境，按照下列写法即可：
+# 在主配置文件application.properties中，写上spring.profiles.active=dev即可。dev只是示例。
