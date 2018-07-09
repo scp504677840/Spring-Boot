@@ -1,0 +1,14 @@
+person:
+  name: tom
+  age: 12
+  boss: false
+  birth: 2017/12/12
+  maps: {k1: v1,k2: v2}
+  lists:
+    - cher
+    - jack
+  address:
+    city: shanghai
+    street: lu
+# ""：双引号 遇到转义字符，不会转义，直接输出特殊字符
+# ''：单引号 遇到转义字符，会转义，输出转义后的字符串
