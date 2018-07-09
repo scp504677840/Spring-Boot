@@ -1,0 +1,19 @@
+person:
+  name: tom
+  age: ${random.int}
+  boss: false
+  birth: 2017/12/12
+  maps: {k1: v1,k2: v2}
+  lists:
+    - cher
+    - jack
+  address:
+    city: ${person.name}_1
+    street: ${person.hi:default}
+# ""：双引号 遇到转义字符，不会转义，直接输出特殊字符
+# ''：单引号 遇到转义字符，会转义，输出转义后的字符串
+
+# 配置文件占位符
+# ${random.int} 使用随机数函数
+# ${person.name}_1 取已经存在的配置属性
+# ${person.hi : default} 当获取的属性不存在时使用默认值，默认值写在 : 冒号的后面
