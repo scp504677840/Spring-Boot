@@ -1,0 +1,24 @@
+# 设置日志级别，也可以写成：logging.level.com.slab=trace；其中logging.level.后面跟的是包名
+logging:
+  level:
+    com.slab: trace
+  #设置日志文件或路径
+  #不指定路径的话，则在当前项目的根目录生成日志文件
+  #特别注意，如果file和path都指定了，那么以file为主。
+  file: springboot.log
+  #还可以指明具体的文件
+  #file: F:/springboot.log
+  #指明了path，日志文件名默认则是spring.log。
+  #path: /spring/log
+  #指定日志输出格式
+  # %d：表示时间日期。
+  # %thread：表示线程名。
+  # %-5level：表示级别从左显示5个字符宽度。
+  # %logger[50]：表示logger名字最长50个字符，否则按照句点分割。
+  # %msg：表示日志消息。
+  # %n：表示换行符。
+  # %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger[50] - %msg%n
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger[50] - %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger[50] - %msg%n"
+
