@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.0.101:3306/lab
+    driver-class-name: com.mysql.jdbc.Driver
+
+# mybatis配置
+mybatis:
+  configuration:
+    #开启全局二级缓存
+    cache-enabled: true
+    #SESSION：默认值，启用一级缓存。STATEMENT：禁用一级缓存。
+    #local-cache-scope: session
+    #设置驱动程序等待数据库响应的秒数
+    default-statement-timeout: 30
+    #启用从经典数据库列名A_COLUMN到驼峰式经典Java属性名称aColumn的自动映射
+    map-underscore-to-camel-case: true
+    #允许JDBC支持生成的主键。 需要兼容的驱动程序。如果设置为true，此设置会强制使用生成的键
+    use-generated-keys: true
+    #当没有为参数提供特定的 JDBC 类型时，为空值指定 JDBC 类型。
+    jdbc-type-for-null: null
+    #DeBug
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #延迟加载
+    #lazy-loading-enabled: true
+    #当开启时，任何方法的调用都会加载该对象的所有属性。否则，每个属性会按需加载
+    #aggressive-lazy-loading: false
