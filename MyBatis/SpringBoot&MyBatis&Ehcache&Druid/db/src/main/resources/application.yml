@@ -1,0 +1,70 @@
+spring:
+  datasource:
+    # 用户名
+    username: root
+    # 密码
+    password: 123456
+    # 数据库连接
+    url: jdbc:mysql://192.168.0.101:3306/lab
+    # 数据库驱动
+    driver-class-name: com.mysql.jdbc.Driver
+    # 数据库数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 配置druid数据源
+    # 初始化连接数
+    initial-size: 5
+    # 最大连接数
+    max-active: 20
+    # 空闲连接数
+    min-idle: 5
+    # 最大等待时间
+    max-wait: 60000
+    # 如果用Oracle，则把poolPreparedStatements配置为true，mysql可以配置为false。分库分表较多的数据库，建议配置为false。
+    #pool-prepared-statements: true
+    # 预编译
+    #max-pool-prepared-statement-per-connection-size: 20
+    #max-open-prepared-statements:  #和上面的等价
+    # 用来检测连接是否有效的sql，要求是一个查询语句。如果validationQuery为null，testOnBorrow、testOnReturn、testWhileIdle都不会其作用。
+    #validation-query:
+    #validation-query-timeout:
+    # 申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
+    #test-on-borrow: false
+    # 归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
+    #test-on-return: false
+    # 建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
+    #test-while-idle: true
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    time-between-eviction-runs-millis: 60000
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    min-evictable-idle-time-millis: 300000
+    # 配置一个连接在池中最大生存的时间，单位是毫秒
+    #max-evictable-idle-time-millis: 600000
+    # 配置监控统计拦截的filters
+    #filters: stat,wall,log4j
+
+# WebStatFilter配置，说明请参考Druid Wiki，配置_配置WebStatFilter
+#spring.datasource.druid.web-stat-filter.enabled= #是否启用StatFilter默认值true
+#spring.datasource.druid.web-stat-filter.url-pattern=
+#spring.datasource.druid.web-stat-filter.exclusions=
+#spring.datasource.druid.web-stat-filter.session-stat-enable=
+#spring.datasource.druid.web-stat-filter.session-stat-max-count=
+#spring.datasource.druid.web-stat-filter.principal-session-name=
+#spring.datasource.druid.web-stat-filter.principal-cookie-name=
+#spring.datasource.druid.web-stat-filter.profile-enable=
+
+# StatViewServlet配置，说明请参考Druid Wiki，配置_StatViewServlet配置
+#spring.datasource.druid.stat-view-servlet.enabled= #是否启用StatViewServlet默认值true
+#spring.datasource.druid.stat-view-servlet.url-pattern=
+#spring.datasource.druid.stat-view-servlet.reset-enable=
+#spring.datasource.druid.stat-view-servlet.login-username=
+#spring.datasource.druid.stat-view-servlet.login-password=
+#spring.datasource.druid.stat-view-servlet.allow=
+#spring.datasource.druid.stat-view-servlet.deny=
+
+# Spring监控配置，说明请参考Druid Github Wiki，配置_Druid和Spring关联监控配置
+#spring.datasource.druid.aop-patterns= # Spring监控AOP切入点，如x.y.z.service.*,配置多个英文逗号分隔
+
+# mybatis配置
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
