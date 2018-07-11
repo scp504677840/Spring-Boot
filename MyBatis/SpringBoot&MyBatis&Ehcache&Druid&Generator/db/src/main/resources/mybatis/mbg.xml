@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="lab" targetRuntime="MyBatis3DynamicSql">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.0.101:3306/lab"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <!-- java类型解析器 -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- JavaBean目录 -->
+        <javaModelGenerator targetPackage="com.db.entities" targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- Mapper.xml -->
+        <sqlMapGenerator targetPackage="com.db.mapper" targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- Mapper接口 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.db.repository"
+                             targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 表 -->
+        <table schema="lab" tableName="book_info" domainObjectName="BookInfo">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="id" javaType="java.math.BigInteger"/>
+            <columnOverride column="gmt_create" javaType="java.sql.Timestamp"/>
+            <columnOverride column="gmt_modified" javaType="java.sql.Timestamp"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
