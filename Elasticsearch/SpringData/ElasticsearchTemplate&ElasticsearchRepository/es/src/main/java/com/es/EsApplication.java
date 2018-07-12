@@ -6,6 +6,8 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 
 /**
  * EsApplicationTests
+ * 参考示例：
+ * https://github.com/ameizi/elasticsearch-jest-example/blob/master/src/main/java/net/aimeizi/client/elasticsearch/TransportClient.java
  */
 @SpringBootApplication
 @EnableElasticsearchRepositories(value = "com.es")
