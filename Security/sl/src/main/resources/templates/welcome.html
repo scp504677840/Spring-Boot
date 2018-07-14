@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<h1 align="conter">欢迎光临</h1>
+<h1 align="conter">游客您好，<a th:href="@{/login}">请登录</a></h1>
+<form th:action="@{/logout}" method="post">
+    <button type="submit">注销</button>
+</form>
+<hr>
+
+<h3>普通</h3>
+<ul>
+    <li><a th:href="@{/level1/1}">普通1</a></li>
+    <li><a th:href="@{/level1/2}">普通2</a></li>
+    <li><a th:href="@{/level1/3}">普通3</a></li>
+</ul>
+<h3>中级</h3>
+<ul>
+    <li><a th:href="@{/level2/1}">中级1</a></li>
+    <li><a th:href="@{/level2/2}">中级2</a></li>
+    <li><a th:href="@{/level2/3}">中级3</a></li>
+</ul>
+<h3>高级</h3>
+<ul>
+    <li><a th:href="@{/level3/1}">高级1</a></li>
+    <li><a th:href="@{/level3/2}">高级2</a></li>
+    <li><a th:href="@{/level3/3}">高级3</a></li>
+</ul>
+
+</body>
+</html>
